@@ -1,0 +1,33 @@
+#!/usr/bin/expect -f
+
+# Teal Dulcet, CS533
+# This script is not meant to be run directly.
+# ./phoronix.exp
+
+set timeout -1
+spawn phoronix-test-suite batch-setup
+expect {
+	"Do you agree to these terms and wish to proceed*:" { sleep 1; send -- "y\r"; exp_continue }
+	"Enable anonymous usage / statistics reporting*:" { sleep 1; send -- "n\r"; exp_continue }
+    "Enable anonymous statistical reporting of installed software / hardware*:" { sleep 1; send -- "n\r"; exp_continue }
+    "Save test results when in batch mode*:" { sleep 1; send -- "y\r" }
+}
+expect "Open the web browser automatically when in batch mode*:"
+sleep 1
+send -- "n\r"
+expect "Auto upload the results to OpenBenchmarking.org*:"
+sleep 1
+send -- "n\r"
+expect "Prompt for test identifier*:"
+sleep 1
+send -- "n\r"
+expect "Prompt for test description*:"
+sleep 1
+send -- "n\r"
+expect "Prompt for saved results file-name*:"
+sleep 1
+send -- "n\r"
+expect "Run all test options*:"
+sleep 1
+send -- "y\r"
+expect eof

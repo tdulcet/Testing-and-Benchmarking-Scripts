@@ -1,0 +1,26 @@
+#!/usr/bin/expect -f
+
+# Teal Dulcet, CS533
+# This script is not meant to be run directly.
+# ./expect.exp <Type of interference>
+
+set timeout -1
+set TYPE [lindex $argv 0]
+spawn ./mprime -m
+expect "Join Gimps?*:"
+sleep 1
+send -- "n\r"
+expect {
+    "NOTE:" { exp_continue }
+	"Type of torture test to run*:" { sleep 1; send -- "$TYPE\r"; exp_continue }
+	"Accept the answers above?*:" { sleep 1; send -- "\r" }
+    "*:" { sleep 1; send -- "\r"; exp_continue }
+}
+expect "Starting workers."
+sleep 10
+send \x03
+sleep 10
+expect "Your choice:"
+sleep 1
+send -- "5\r"
+expect eof
