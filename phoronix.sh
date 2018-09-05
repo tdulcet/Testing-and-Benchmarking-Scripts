@@ -14,7 +14,7 @@ if [[ "$#" -eq 0 ]]; then
 	echo "Usage: $0 <Benchmark Test(s) or Suite(s)>" >&2
 	exit 1
 fi
-echo -e "Benchmark Test(s) or Suite(s):\t$@\n"
+echo -e "Benchmark Test(s) or Suite(s):\t$*\n"
 if [[ -d "$DIR" ]] && command -v phoronix-test-suite >/dev/null; then
 	echo -e "The Phoronix Test Suite is already downloaded and installed"
 else
@@ -31,7 +31,10 @@ else
 		sudo apt-get install php5-cli -y
 		# sudo apt-get install php-cli -y
 	fi
-	mkdir "$DIR"
+	if ! mkdir "$DIR"; then
+		echo "Error: Failed to create directory $DIR" >&2
+		exit 1
+	fi
 	cd "$DIR"
 	echo -e "Downloading the Phoronix Test Suite\n"
 	wget https://phoronix-test-suite.com/releases/repo/pts.debian/files/$FILE

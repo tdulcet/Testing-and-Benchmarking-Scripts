@@ -34,11 +34,14 @@ else
 		sudo apt-get update -y
 		sudo apt-get install expect -y
 	fi
-	mkdir "$DIR"
+	if ! mkdir "$DIR"; then
+		echo "Error: Failed to create directory $DIR" >&2
+		exit 1
+	fi
 	cd "$DIR"
 	echo -e "Downloading Prime95\n"
 	wget https://www.mersenne.org/ftp_root/gimps/$FILE
-	if [[ ! "$(sha256sum $FILE | head -c 64 | tr '[a-z]' '[A-Z]')" = "$SUM" ]]; then
+	if [[ ! "$(sha256sum $FILE | head -c 64 | tr 'a-z' 'A-Z')" = "$SUM" ]]; then
 		echo "Error: sha256sum does not match" >&2
 		echo "Please run \"rm -r $DIR\" and try running this script again" >&2
 		exit 1
