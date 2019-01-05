@@ -2,7 +2,7 @@
 
 # Teal Dulcet, CS533
 # This script is not meant to be run directly.
-# ./expect.exp <Type of interference>
+# ./mprime.exp <Type of interference>
 
 set timeout -1
 set TYPE [lindex $argv 0]

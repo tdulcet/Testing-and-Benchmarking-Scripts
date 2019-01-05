@@ -26,3 +26,7 @@ wget https://raw.github.com/tdulcet/Testing-and-Benchmarking-Scripts/master/phor
 ```
 
 These scripts should work on Ubuntu and any Linux distribution that can use the apt package manager.
+
+## Contributing
+
+Pull requests welcome!

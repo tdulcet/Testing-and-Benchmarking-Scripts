@@ -9,7 +9,7 @@
 # sudo dpkg -P phoronix-test-suite
 
 DIR="phoronix"
-FILE="phoronix-test-suite_8.0.0_all.deb"
+FILE="phoronix-test-suite_8.4.1_all.deb"
 if [[ "$#" -eq 0 ]]; then
 	echo "Usage: $0 <Benchmark Test(s) or Suite(s)>" >&2
 	exit 1
