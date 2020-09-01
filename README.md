@@ -13,7 +13,7 @@ Downloads, sets up and runs [Prime95](https://www.mersenne.org/download/#downloa
 wget https://raw.github.com/tdulcet/Testing-and-Benchmarking-Scripts/master/mprime.sh -qO - | bash -s -- <Type of torture test>
 ```
 
-To run Prime95 for Distributed Computing, see here: https://github.com/tdulcet/Distributed-Computing-Scripts.
+To run Prime95 for Distributed Computing, see the [Distributed Computing](https://github.com/tdulcet/Distributed-Computing-Scripts) scripts.
 
 ## Benchmarking
 

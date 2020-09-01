@@ -9,8 +9,8 @@
 # sudo dpkg -P phoronix-test-suite
 
 DIR="phoronix"
-FILE="phoronix-test-suite_8.8.1_all.deb"
-if [[ "$#" -eq 0 ]]; then
+FILE="phoronix-test-suite_9.8.0_all.deb"
+if [[ $# -eq 0 ]]; then
 	echo "Usage: $0 <Benchmark Test(s) or Suite(s)>" >&2
 	exit 1
 fi
@@ -42,7 +42,7 @@ else
 	echo -e "Please enter your password when prompted.\n"
 	sudo dpkg -i $FILE
 	echo -e "\nSetting up the Phoronix Test Suite\n"
-	expect <(wget https://raw.github.com/tdulcet/Distributed-Computing-Scripts/master/phoronix.exp -qO -) --
+	expect <(wget https://raw.github.com/tdulcet/Testing-and-Benchmarking-Scripts/master/phoronix.exp -qO -) --
 fi
 echo -e "\nStarting the Phoronix Test Suite\n"
 # nohup phoronix-test-suite batch-benchmark "$@" &
