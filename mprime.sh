@@ -4,11 +4,11 @@
 # Downloads and runs Prime95 to generate interference.
 # wget https://raw.github.com/tdulcet/Testing-and-Benchmarking-Scripts/master/mprime.sh -qO - | bash -s --
 # ./mprime.sh <Type of interference>
-# ./mprime.sh 3
+# ./mprime.sh 4
 
 DIR="mprime"
-FILE="p95v298b3.linux64.tar.gz"
-SUM="66117E8C30752426471C7B4A7A64FFBFC53C84D0F3140ACF87C08D3FEC8E99AC"
+FILE="p95v303b6.linux64.tar.gz"
+SUM="EE54B56062FEB05C9F80963A4E3AE8555D0E59CA60DDBCBA65CE05225C9B9A79"
 if [[ $# -ne 1 ]]; then
 	echo "Usage: $0 <Type of interference>" >&2
 	exit 1

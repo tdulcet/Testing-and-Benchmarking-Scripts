@@ -25,7 +25,7 @@ Downloads, installs, sets up and runs the [Phoronix Test Suite](https://www.phor
 wget https://raw.github.com/tdulcet/Testing-and-Benchmarking-Scripts/master/phoronix.sh -qO - | bash -s -- <Benchmark Test(s) or Suite(s)>
 ```
 
-These scripts should work on Ubuntu and any Linux distribution that can use the apt package manager.
+These scripts should work on Ubuntu, Debian and any Linux distribution that can use the apt package manager.
 
 ## Contributing
 
