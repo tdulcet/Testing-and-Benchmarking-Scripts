@@ -3,6 +3,8 @@ Linux Stress/Torture Testing and Benchmarking Scripts
 
 Copyright © 2018 Teal Dulcet
 
+❤️ Please visit [tealdulcet.com](https://www.tealdulcet.com/) to support these scripts and my other software development.
+
 ## Stress/Torture Testing
 
 ### Prime95/MPrime
@@ -16,6 +18,8 @@ wget https://raw.github.com/tdulcet/Testing-and-Benchmarking-Scripts/master/mpri
 To run Prime95 for Distributed Computing, see the [Distributed Computing](https://github.com/tdulcet/Distributed-Computing-Scripts) scripts.
 
 ## Benchmarking
+
+Also see the [Benchmarking Tool](https://github.com/tdulcet/Benchmarking-Tool).
 
 ### The Phoronix Test Suite
 

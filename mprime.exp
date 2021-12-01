@@ -11,10 +11,10 @@ expect "Join Gimps?*:"
 sleep 1
 send -- "n\r"
 expect {
-    "NOTE:" { exp_continue }
+	"NOTE:" { exp_continue }
 	"Type of torture test to run*:" { sleep 1; send -- "$TYPE\r"; exp_continue }
 	"Accept the answers above?*:" { sleep 1; send -- "\r" }
-    "*:" { sleep 1; send -- "\r"; exp_continue }
+	"*:" { sleep 1; send -- "\r"; exp_continue }
 }
 expect "Starting workers."
 sleep 10
