@@ -9,8 +9,8 @@ spawn phoronix-test-suite batch-setup
 expect {
 	"Do you agree to these terms and wish to proceed*:" { sleep 1; send -- "y\r"; exp_continue }
 	"Enable anonymous usage / statistics reporting*:" { sleep 1; send -- "n\r"; exp_continue }
-    "Enable anonymous statistical reporting of installed software / hardware*:" { sleep 1; send -- "n\r"; exp_continue }
-    "Save test results when in batch mode*:" { sleep 1; send -- "y\r" }
+	"Enable anonymous statistical reporting of installed software / hardware*:" { sleep 1; send -- "n\r"; exp_continue }
+	"Save test results when in batch mode*:" { sleep 1; send -- "y\r" }
 }
 expect "Open the web browser automatically when in batch mode*:"
 sleep 1

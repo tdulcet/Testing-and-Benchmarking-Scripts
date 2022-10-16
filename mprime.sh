@@ -7,8 +7,8 @@
 # ./mprime.sh 4
 
 DIR="mprime"
-FILE="p95v307b9.linux64.tar.gz"
-SUM="d47d766c734d1cca4521cf7b37c1fe351c2cf1fbe5b7c70c457061a897a5a380"
+FILE="p95v308b16.linux64.tar.gz"
+SUM="9fa9b30dd175be287d3a3f4b85139d02d4e64aa2dad88324abd4fdfcbbfe10d4"
 if [[ $# -ne 1 ]]; then
 	echo "Usage: $0 <Type of interference>" >&2
 	exit 1
@@ -43,7 +43,7 @@ else
 	wget https://www.mersenne.org/ftp_root/gimps/$FILE
 	if [[ "$(sha256sum $FILE | head -c 64)" != "$SUM" ]]; then
 		echo "Error: sha256sum does not match" >&2
-		echo "Please run \"rm -r $DIR\" make sure you are using the latest version of this script and try running it again" >&2
+		echo "Please run \"rm -r ${DIR@Q}\" make sure you are using the latest version of this script and try running it again" >&2
 		echo "If you still get this error, please create an issue: https://github.com/tdulcet/Testing-and-Benchmarking-Scripts/issues" >&2
 		exit 1
 	fi
