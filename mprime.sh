@@ -7,8 +7,10 @@
 # ./mprime.sh 4
 
 DIR="mprime"
-FILE="p95v308b17.linux64.tar.gz"
-SUM="5180c3843d2b5a7c7de4aa5393c13171b0e0709e377c01ca44154608f498bec7"
+FILE32="p95v308b15.linux32.tar.gz"
+SUM32="183e62f1072782cd39c45fb31f3ff22d3c7b724ba7cc3d0cbd32ad0d1caf1653"
+FILE64="p95v308b17.linux64.tar.gz"
+SUM64="5180c3843d2b5a7c7de4aa5393c13171b0e0709e377c01ca44154608f498bec7"
 if [[ $# -ne 1 ]]; then
 	echo "Usage: $0 <Type of interference>" >&2
 	exit 1
@@ -19,11 +21,15 @@ if ! [[ $TYPE =~ $RE ]]; then
 	echo "Usage: <Type of interference> must be a number" >&2
 	exit 1
 fi
-if [[ $TYPE -lt 1 || $TYPE -gt 4 ]]; then
+if [[ $TYPE -lt 1 || $TYPE -gt 5 ]]; then
 	echo "Usage: <Type of interference> is not valid" >&2
 	exit 1
 fi
 echo -e "Type of interference:\t$TYPE\n"
+
+ARCHITECTURE=$(getconf LONG_BIT)
+echo -e "\nArchitecture:\t\t\t$HOSTTYPE (${ARCHITECTURE}-bit)\n"
+
 if [[ -d "$DIR" && -x "$DIR/mprime" ]]; then
 	echo -e "Prime95 is already downloaded\n"
 	cd "$DIR"
@@ -33,6 +39,13 @@ else
 		echo -e "Please enter your password if prompted.\n"
 		sudo apt-get update -y
 		sudo apt-get install expect -y
+	fi
+	if [[ $ARCHITECTURE -eq 32 ]]; then
+		FILE=$FILE32
+		SUM=$SUM32
+	else
+		FILE=$FILE64
+		SUM=$SUM64
 	fi
 	if ! mkdir "$DIR"; then
 		echo "Error: Failed to create directory $DIR" >&2
