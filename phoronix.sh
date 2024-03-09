@@ -15,7 +15,7 @@ if [[ $# -eq 0 ]]; then
 	exit 1
 fi
 echo -e "Benchmark Test(s) or Suite(s):\t$*\n"
-if [[ -d "$DIR" ]] && command -v phoronix-test-suite >/dev/null; then
+if [[ -d $DIR ]] && command -v phoronix-test-suite >/dev/null; then
 	echo -e "The Phoronix Test Suite is already downloaded and installed"
 else
 	if ! command -v expect >/dev/null; then
