@@ -22,14 +22,14 @@ else
 		echo -e "Installing Expect"
 		echo -e "Please enter your password if prompted.\n"
 		sudo apt-get update -y
-		sudo apt-get install expect -y
+		sudo apt-get install -y expect
 	fi
 	if ! command -v php >/dev/null; then
 		echo -e "Installing PHP"
 		echo -e "Please enter your password if prompted.\n"
 		sudo apt-get update -y
-		sudo apt-get install php5-cli -y
-		# sudo apt-get install php-cli -y
+		sudo apt-get install -y php5-cli
+		# sudo apt-get install -y php-cli
 	fi
 	if ! mkdir "$DIR"; then
 		echo "Error: Failed to create directory $DIR" >&2
