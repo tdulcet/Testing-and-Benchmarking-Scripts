@@ -2,7 +2,7 @@
 
 # Teal Dulcet, CS533
 # Downloads, installs and runs the Phoronix Test Suite benchmarks.
-# wget https://raw.github.com/tdulcet/Testing-and-Benchmarking-Scripts/master/phoronix.sh -qO - | bash -s --
+# wget -qO - https://raw.github.com/tdulcet/Testing-and-Benchmarking-Scripts/master/phoronix.sh | bash -s --
 # ./phoronix.sh <Benchmark Test(s) or Suite(s)>
 # ./phoronix.sh pts/cpu pts/kernel pts/memory pts/motherboard
 
@@ -45,7 +45,7 @@ else
 	if [[ -e ../phoronix.exp ]]; then
 		expect ../phoronix.exp --
 	else
-		expect <(wget hhttps://raw.github.com/tdulcet/Testing-and-Benchmarking-Scripts/master/phoronix.exp -qO -) --
+		expect <(wget -qO - https://raw.github.com/tdulcet/Testing-and-Benchmarking-Scripts/master/phoronix.exp) --
 	fi
 fi
 echo -e "\nStarting the Phoronix Test Suite\n"
