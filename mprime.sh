@@ -7,10 +7,10 @@
 # ./mprime.sh 4
 
 DIR="mprime"
-FILE32=p95v3019b15.linux32.tar.gz
-SUM32=3ec9e4aed4204f2f3ea99e082dcc2a022d82dfdef3fba1b9f71a112d652d2711
-FILE64=p95v3019b15.linux64.tar.gz
-SUM64=758e43f56683b5ec0401cd75f8e761da59341ccb7f343d5a9e3e12f44f9bda42
+FILE32=p95v3019b20.linux32.tar.gz
+SUM32=2b7e5d8447246cbb4fabebfd8599cee16a407e659b3bb5142314023e9f0d11e1
+FILE64=p95v3019b20.linux64.tar.gz
+SUM64=4ce2377e03deb4cf189523136e26401ba08f67857a128e420dd030d00cdca601
 if [[ $# -ne 1 ]]; then
 	echo "Usage: $0 <Type of interference>" >&2
 	exit 1
